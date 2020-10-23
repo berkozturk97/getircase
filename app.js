@@ -7,7 +7,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 
 
-var itemRouter = require('./routes/item')
+var recordsRouter = require('./routes/records')
 
 var app = express();
 const db = require('./helper/db')();
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 app.use('/', indexRouter);
 
-app.use('/item', itemRouter);
+app.use('/records', recordsRouter);
 
 
 

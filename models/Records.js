@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
+const RecordsSchema = new Schema({
     counts: {
         type: Array,
         required: true,
@@ -18,8 +18,6 @@ const ItemSchema = new Schema({
         type: String,
         required: true,
     }
-}, {
-    timestamps: true
 });
 
-module.exports = mongoose.model('Item', ItemSchema);
+module.exports = mongoose.model('Records', RecordsSchema);

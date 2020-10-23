@@ -1,0 +1,33 @@
+{
+  "name": "getircase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkozturk97/getircase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berkozturk97/getircase/issues"
+  },
+  "homepage": "https://github.com/berkozturk97/getircase#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.9.21",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4"
+  }
+}

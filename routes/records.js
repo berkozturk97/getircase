@@ -5,10 +5,7 @@ const Records = require('../models/Records');
 
 router.post('/filterItem', async (req, res) => {
 	const { startDate, endDate, minCount, maxCount } = req.body;
-
-	console.log(new Date("2018-05-05"));
-
-
+	//comment
 	try {
 		const records = await Records.aggregate([
 			{

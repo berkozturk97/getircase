@@ -2,10 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 const Records = require('../models/Records');
+const validateAPI = require('../validate/validate');
 
-router.post('/filterItem', async (req, res) => {
+router.post('/getFilteredRecord', async (req, res) => {
+	//  	~~~~~~~~~~~~~~Types~~~~~~~~~~~~~~~~~ 
+	// startDate,endDate => Date
+	// minCount,maxCount => Number
 	const { startDate, endDate, minCount, maxCount } = req.body;
-	//comment
+	//validating values
+	validateAPI(startDate, endDate, minCount, maxCount, res);
+	//rearranging response
 	try {
 		const records = await Records.aggregate([
 			{
@@ -36,14 +42,9 @@ router.post('/filterItem', async (req, res) => {
 			"records": records
 		})
 	} catch (error) {
-		res.json({
-			"code": 5,
-			"msg": error,
-		})
+		 res.json(error);
 	}
 
 })
-
-
 
 module.exports = router;

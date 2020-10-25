@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
+require('dotenv/config')
+require('./db')
 
 module.exports = () => {
-    mongoose.connect('mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true', {
+    mongoose.connect(process.env.MONGODB_SECRET_KEY, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,

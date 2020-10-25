@@ -1,0 +1,64 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Filtering records by count and date",
+        "version": "1.0.0",
+        "title": "Getir Case Study API",
+        "termsOfService": "http://swagger.io/terms/",
+        "license": {
+            "name": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
+        }
+    },
+    "tags": [],
+    "definitions": {
+        "Record": {
+            "required": [],
+            "properties": {
+                "startDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "endDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "minCount": {
+                    "type": "number"
+                },
+                "maxCount": {
+                    "type": "number"
+                }
+            }
+        }
+    },
+    "paths": {
+        "/records/getFilteredRecord": {
+            "post": {
+                "tags": [
+                    "Records"
+                ],
+                "summary": "Filtered Records",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Get filtered records",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Record"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    },
+                    "404": {
+                        "description": "Failed."
+                    }
+                }
+            }
+        }
+    }
+}
